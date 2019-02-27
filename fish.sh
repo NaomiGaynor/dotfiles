@@ -30,11 +30,9 @@ fi
 echo "Installing Powerline Shell"
 pip3 install powerline-shell
 mkdir ~/.config/powerline-shell
-# cp ./fish/powerline-shell/custom-segments/*.py ~/.config/powerline-shell/custom-segments/
-cp ./fish/powerline-shell/config.json ~/.config/powerline-shell/config.json
-# if we use the double quotes, we get a *.py file created
-# ln -s ./fish/powerline-shell/custom-segments/*.py ~/.config/powerline-shell/custom-segments/
-ln -s ./fish/powerline-shell/config.json ~/.config/powerline-shell/config.json
+
+cp "$dotfiles_folder/fish/powerline-shell/config.json" ~/.config/powerline-shell/config.json
+ln -s "$dotfiles_folder/fish/powerline-shell/config.json" ~/.config/powerline-shell/config.json
 
 
 # Install fish
@@ -52,4 +50,7 @@ fi
 
 echo "Symlinking config.fish file"
 rm ~/.config/fish/config.fish
-ln -s ./fish/config.fish ~/.config/fish/config.fish
+ln -s "$dotfiles_folder/fish/config.fish" ~/.config/fish/config.fish
+
+# You may still need to download powerline fonts: https://github.com/powerline/fonts
+# Basic guide on how to set up: https://medium.freecodecamp.org/jazz-up-your-bash-terminal-a-step-by-step-guide-with-pictures-80267554cb22
