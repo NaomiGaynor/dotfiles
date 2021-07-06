@@ -52,7 +52,7 @@ brew_cask_packages=(
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
-    confirm "Are you sure you want to disinstall Brew and all the packages?" || exit
+    confirm "Are you sure you want to uninstall Brew and all the packages?" || exit
 
     for i in "${brew_packages[@]}"
     do
